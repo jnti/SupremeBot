@@ -1,0 +1,22 @@
+{
+  "name": "mybot",
+  "version": "1.0.0",
+  "description": "Electron application that uses Puppeteer to control Headless Chrome",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jnti/preme.git"
+  },
+  "author": "jnti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jnti/preme/issues"
+  },
+  "homepage": "https://github.com/jnti/preme#readme",
+  "devDependencies": {
+    "electron": "^6.0.9"
+  }
+}
