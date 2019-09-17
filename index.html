@@ -5,8 +5,11 @@
     <title>Supreme</title>
   </head>
   <body>
+    <script type="text/javascript" src="bot.js"></script>
+    <script type="text/javascript" src="jsonParser.js"></script>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Supreme_Logo.svg/1200px-Supreme_Logo.svg.png" alt="Supreme Logo" style="width:133.333px;height:46.111px;"><br>
-    <input type="text" name="ItemName" placeholder="Enter Item Name">
-    <input type="button" value="Submit" style="text-align:center;">
+    <input type="text" id="itemName" name="ItemName" placeholder="Enter Item Name">
+    <input type="button" value="Submit" style="text-align:center;" onclick="getItemName()">
+    <p id="space"></p>
   </body>
 </html>
