@@ -14,6 +14,7 @@ function createWindow(){
         }
     })
 
+    // loading the index file
     win.loadFile('index.html');
 }
 
