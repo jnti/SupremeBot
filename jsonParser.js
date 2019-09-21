@@ -27,3 +27,5 @@ document.getElementById("submit").addEventListener("click", function () {
         }
     })
 });
+
+// get the style and size id from https://www.supremenewyork.com/shop/<id>.json
