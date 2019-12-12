@@ -52,7 +52,6 @@ document.getElementById("loadId").addEventListener("click", function () {
 
                 if (itemName.name == itemTextValue) {
                     document.getElementById("space1").innerHTML = itemName.id;
-                    itemName.name = itemTextValue;
                     itemId = itemName.id;
 
                     // style and size endpoint of the item
@@ -79,7 +78,7 @@ document.getElementById("loadId").addEventListener("click", function () {
 
                                 if (itemStyle.name == itemColorValue) {
                                     document.getElementById("space2").innerHTML = itemStyle.id;
-                                    itemStyle.name = itemColorValue;
+                                    itemStyleId= itemStyle.id;
                                 }
 
                                 // loop through array of json and if the name is equal to the name of text value
@@ -90,7 +89,7 @@ document.getElementById("loadId").addEventListener("click", function () {
                                     // getting the item size id
                                     if (itemSize.name == itemSizeValue) {
                                         document.getElementById("space3").innerHTML = itemSize.id;
-                                        itemSize.name = itemSizeValue;
+                                        itemSizeId = itemSize.id;
                                     }
                                 }
                             }

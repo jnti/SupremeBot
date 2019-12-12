@@ -1,8 +1,8 @@
 var http = new XMLHttpRequest();
 
 document.getElementById("add").addEventListener("click", function () {
-    var url = "https://www.supremenewyork.com/shop/" + itemName.id + "/add.json";
-    var params = "s=" + itemSize.id + "&st=" + itemStyle.id + "&qty=1";
+    var url = "https://www.supremenewyork.com/shop/" + itemId + "/add.json";
+    var params = "s=" + itemSizeId + "&st=" + itemStyleId + "&qty=1";
 
     http.open('POST', url, true);
 
