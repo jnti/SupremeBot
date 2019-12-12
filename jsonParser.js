@@ -1,7 +1,7 @@
 var request = require('request');
 var mobileEndpoint = "https://www.supremenewyork.com/mobile_stock.json";
 var ssEndpoint;
-var itemName, itemTextValue, itemStyle, itemColorValue, itemSize;
+var itemName, itemTextValue, itemStyle, itemColorValue, itemSize, itemId, itemStyleId, itemSizeId;
 
 /**document.getElementById("itemSelectBox").onload = function() {getItemName()};
 
@@ -30,7 +30,7 @@ function getItemName(){
 
 // onClick of the submit button
 // doing a simplified http request to parse the products_and_categories
-document.getElementById("submit").addEventListener("click", function () {
+document.getElementById("loadId").addEventListener("click", function () {
     request({
         url: mobileEndpoint,
         json: true
@@ -49,10 +49,11 @@ document.getElementById("submit").addEventListener("click", function () {
             // write the id of the respective item to the page
             for (var i = 0; i < data.length; i++) {
                 itemName = data[i];
-                
+
                 if (itemName.name == itemTextValue) {
                     document.getElementById("space1").innerHTML = itemName.id;
                     itemName.name = itemTextValue;
+                    itemId = itemName.id;
 
                     // style and size endpoint of the item
                     ssEndpoint = "https://www.supremenewyork.com/shop/" + itemName.id + ".json";
@@ -75,7 +76,6 @@ document.getElementById("submit").addEventListener("click", function () {
                             // write the id of the respective item to the page
                             for (var i = 0; i < ssData.length; i++) {
                                 itemStyle = ssData[i];
-                                console.log(itemStyle.sizes);
 
                                 if (itemStyle.name == itemColorValue) {
                                     document.getElementById("space2").innerHTML = itemStyle.id;
@@ -86,7 +86,8 @@ document.getElementById("submit").addEventListener("click", function () {
                                 // write the id of the respective item to the page
                                 for (var j = 0; j < ssData[i].sizes.length; j++) {
                                     itemSize = ssData[i].sizes[j];
-                                    
+
+                                    // getting the item size id
                                     if (itemSize.name == itemSizeValue) {
                                         document.getElementById("space3").innerHTML = itemSize.id;
                                         itemSize.name = itemSizeValue;
@@ -95,7 +96,6 @@ document.getElementById("submit").addEventListener("click", function () {
                             }
                         }
                     })
-
                 }
             }
         }
